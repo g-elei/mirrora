@@ -1,0 +1,49 @@
+{
+  "emotions": [
+    "envy",
+    "self_doubt",
+    "confusion",
+    "anxiety",
+    "sadness",
+    "anger",
+    "shame",
+    "loneliness",
+    "hope",
+    "pride",
+    "relief",
+    "joy",
+    "gratitude",
+    "frustration",
+    "exhaustion",
+    "fear",
+    "ambition",
+    "guilt",
+    "love",
+    "determination"
+  ],
+  "situations": [
+    "peer_comparison",
+    "performing_wellness",
+    "work_stress",
+    "relationship_conflict",
+    "grief",
+    "creative_block",
+    "health_worry",
+    "financial_stress",
+    "identity_question",
+    "unsupported_or_vague",
+    "crisis"
+  ],
+  "themes": [
+    "love",
+    "loss",
+    "ambition",
+    "identity",
+    "courage",
+    "failure",
+    "time",
+    "belonging",
+    "meaning",
+    "fear"
+  ]
+}

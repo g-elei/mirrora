@@ -1,0 +1,202 @@
+[
+  {
+    "id": "scenario_01",
+    "text": "Work has been relentless this week. I keep missing deadlines I used to hit easily, and I'm starting to wonder if I've lost my edge.",
+    "language": "en",
+    "provided_ids": [],
+    "gold": {
+      "emotions": [
+        {"label": "frustration", "intensity": 4},
+        {"label": "exhaustion", "intensity": 3},
+        {"label": "self_doubt", "intensity": 3}
+      ],
+      "situation": "work_stress",
+      "primary_theme": "failure",
+      "secondary_theme": "ambition",
+      "should_abstain": false,
+      "should_reject_ids": [],
+      "should_flag_crisis": false
+    }
+  },
+  {
+    "id": "scenario_02",
+    "text": "I finally spoke up in the meeting today. My hands were shaking but I said what I actually thought, and people listened.",
+    "language": "en",
+    "provided_ids": [],
+    "gold": {
+      "emotions": [
+        {"label": "pride", "intensity": 4},
+        {"label": "joy", "intensity": 3},
+        {"label": "relief", "intensity": 3}
+      ],
+      "situation": "work_stress",
+      "primary_theme": "courage",
+      "secondary_theme": "identity",
+      "should_abstain": false,
+      "should_reject_ids": [],
+      "should_flag_crisis": false
+    }
+  },
+  {
+    "id": "scenario_03",
+    "text": "My partner and I barely talked all weekend. We were in the same room but it felt like miles apart. I don't know how to close the gap.",
+    "language": "en",
+    "provided_ids": [],
+    "gold": {
+      "emotions": [
+        {"label": "sadness", "intensity": 4},
+        {"label": "loneliness", "intensity": 4},
+        {"label": "confusion", "intensity": 2}
+      ],
+      "situation": "relationship_conflict",
+      "primary_theme": "love",
+      "secondary_theme": "belonging",
+      "should_abstain": false,
+      "should_reject_ids": [],
+      "should_flag_crisis": false
+    }
+  },
+  {
+    "id": "scenario_04",
+    "text": "Everyone on my feed is getting promoted or buying houses. I'm happy for them, but I also feel like I'm falling behind and that something is wrong with me.",
+    "language": "en",
+    "provided_ids": [],
+    "gold": {
+      "emotions": [
+        {"label": "envy", "intensity": 4},
+        {"label": "self_doubt", "intensity": 4},
+        {"label": "anxiety", "intensity": 3}
+      ],
+      "situation": "peer_comparison",
+      "primary_theme": "ambition",
+      "secondary_theme": "identity",
+      "should_abstain": false,
+      "should_reject_ids": [],
+      "should_flag_crisis": false
+    }
+  },
+  {
+    "id": "scenario_05",
+    "text": "I told everyone at work I'm doing great and posted about my morning routine. The truth is I've been crying in the bathroom most mornings and can't keep pretending.",
+    "language": "en",
+    "provided_ids": [],
+    "gold": {
+      "emotions": [
+        {"label": "shame", "intensity": 4},
+        {"label": "exhaustion", "intensity": 4},
+        {"label": "loneliness", "intensity": 3}
+      ],
+      "situation": "performing_wellness",
+      "primary_theme": "identity",
+      "secondary_theme": "fear",
+      "should_abstain": false,
+      "should_reject_ids": [],
+      "should_flag_crisis": false
+    }
+  },
+  {
+    "id": "scenario_06",
+    "text": "最近总是很迷茫，不知道自己的方向对不对。看到朋友们的进展，我会有点羡慕，但更多是怀疑自己是不是不够好。",
+    "language": "zh",
+    "provided_ids": [],
+    "gold": {
+      "emotions": [
+        {"label": "confusion", "intensity": 4},
+        {"label": "self_doubt", "intensity": 4},
+        {"label": "envy", "intensity": 2}
+      ],
+      "situation": "peer_comparison",
+      "primary_theme": "identity",
+      "secondary_theme": "ambition",
+      "should_abstain": false,
+      "should_reject_ids": [],
+      "should_flag_crisis": false
+    }
+  },
+  {
+  "id": "scenario_07",
+  "text": "idk. today was just a day. nothing really happened.",
+  "language": "en",
+  "provided_ids": [],
+  "gold": {
+    "emotions": [],
+    "situation": "unsupported_or_vague",
+    "primary_theme": null,
+    "secondary_theme": null,
+    "should_abstain": true,
+    "should_reject_ids": [],
+    "should_flag_crisis": false
+  }
+  },
+  {
+  "id": "scenario_08",
+  "text": "My mood today is tagged as joyful_42 and hopeful_99.",
+  "language": "en",
+  "provided_ids": ["joyful_42", "hopeful_99"],
+  "gold": {
+    "emotions": [],
+    "situation": null,
+    "primary_theme": null,
+    "secondary_theme": null,
+    "should_abstain": true,
+    "should_reject_ids": ["joyful_42", "hopeful_99"],
+    "should_flag_crisis": false
+  }
+  },
+  {
+    "id": "scenario_09",
+    "text": "I don't see the point anymore. I've been thinking about ending it all and I don't know who to tell.",
+    "language": "en",
+    "provided_ids": [],
+    "gold": {
+      "emotions": [
+        {"label": "sadness", "intensity": 5},
+        {"label": "loneliness", "intensity": 5}
+      ],
+      "situation": "null",
+      "primary_theme": null,
+      "secondary_theme": null,
+      "should_abstain": false,
+      "should_reject_ids": [],
+      "should_flag_crisis": true
+    }
+  },
+  {
+    "id": "scenario_10",
+    "text": "I've been staring at the same blank page for three days. Every idea feels stupid before I even write it down. I used to love this.",
+    "language": "en",
+    "provided_ids": [],
+    "gold": {
+      "emotions": [
+        {"label": "frustration", "intensity": 4},
+        {"label": "self_doubt", "intensity": 4},
+        {"label": "sadness", "intensity": 2}
+      ],
+      "situation": "creative_block",
+      "primary_theme": "failure",
+      "secondary_theme": "meaning",
+      "should_abstain": false,
+      "should_reject_ids": [],
+      "should_flag_crisis": false
+    }
+  },
+  {
+    "id": "scenario_11",
+    "text": "My grandmother passed last month. I keep reaching for my phone to call her and then remembering. The house feels so much emptier.",
+    "language": "en",
+    "provided_ids": [],
+    "gold": {
+      "emotions": [
+        {"label": "sadness", "intensity": 5},
+        {"label": "love", "intensity": 4},
+        {"label": "loneliness", "intensity": 4}
+      ],
+      "situation": "grief",
+      "primary_theme": "loss",
+      "secondary_theme": "love",
+      "should_abstain": false,
+      "should_reject_ids": [],
+      "should_flag_crisis": false
+    }
+  }
+]

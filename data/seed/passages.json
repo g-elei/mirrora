@@ -1,0 +1,20 @@
+[
+  {
+    "id": "passage_test_good",
+    "text": "He had spent years comparing himself to men who seemed to rise without effort, and the comparison had hollowed him out.",
+    "book": "test",
+    "location": "test",
+    "themes": ["ambition", "identity"],
+    "expresses": ["envy"],
+    "addresses": ["envy"]
+  },
+  {
+    "id": "passage_test_bad",
+    "text": "The clock on the wall ticked.",
+    "book": "test",
+    "location": "test",
+    "themes": ["time"],
+    "expresses": [],
+    "addresses": ["envy"]
+  }
+]

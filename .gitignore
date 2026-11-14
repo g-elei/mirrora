@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+*.log
+evaluation/results/
+data/personal/
+.venv/
+.DS_Store
+*.dump
