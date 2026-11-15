@@ -60,7 +60,7 @@ Persona-Driven Fallbacks: The system operates with four distinct personas (Confi
 &#x09;npm run dev
 
 
-## Evaluation Results
+\## Evaluation Results
 
 The system is guarded by an 18-case regression suite. The interpreter is evaluated against a frozen set of 11 scenarios comparing the live LLM to an offline deterministic baseline.
 
@@ -76,7 +76,7 @@ The system is guarded by an 18-case regression suite. The interpreter is evaluat
 
 *Note: The live Qwen path outperforms the deterministic offline baseline on all scored dimensions, passing the strict gating criteria for production deployment.*
 
-## Testing
+\## Testing
 
 To verify the system (corpus validity, fabrication rejection, crisis routing, persistence):
 
