@@ -7,3 +7,9 @@ data/personal/
 .venv/
 .DS_Store
 *.dump
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+build/

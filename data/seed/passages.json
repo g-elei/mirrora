@@ -1,20 +1,124 @@
 [
   {
-    "id": "passage_test_good",
-    "text": "He had spent years comparing himself to men who seemed to rise without effort, and the comparison had hollowed him out.",
-    "book": "test",
-    "location": "test",
-    "themes": ["ambition", "identity"],
-    "expresses": ["envy"],
-    "addresses": ["envy"]
+    "id": "passage.jane_eyre.003",
+    "text": "I might have been as good as you—wiser—almost as stainless. I envy you your peace of mind, your clean conscience, your unpolluted memory. Little girl, a memory without blot or contamination must be an exquisite treasure—an inexhaustible source of pure refreshment: is it not?",
+    "book": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "year": 1847,
+    "location": "Chapter XIV",
+    "themes": [
+      "identity",
+      "loss",
+      "love"
+    ],
+    "expresses": [
+      "envy",
+      "shame"
+    ],
+    "addresses": [],
+    "source_url": "https://www.gutenberg.org/cache/epub/1260/pg1260.txt",
+    "source_line_span": [
+      6175,
+      6183
+    ]
   },
   {
-    "id": "passage_test_bad",
-    "text": "The clock on the wall ticked.",
-    "book": "test",
-    "location": "test",
-    "themes": ["time"],
-    "expresses": [],
-    "addresses": ["envy"]
+    "id": "passage.great_expectations.005",
+    "text": "She had admirers without end. No doubt my jealousy made an admirer of every one who went near her; but there were more than enough of them without that. I saw her often at Richmond, I heard of her often in town, and I used often to take her and the Brandleys on the water; there were picnics, fête days, plays, operas, concerts, parties, all sorts of pleasures, through which I pursued her,—and they were all miseries to me.",
+    "book": "Great Expectations",
+    "author": "Charles Dickens",
+    "year": 1861,
+    "location": "Part III (Estella's admirers)",
+    "themes": [
+      "ambition",
+      "identity"
+    ],
+    "expresses": [
+      "envy",
+      "self_doubt"
+    ],
+    "addresses": []
+  },
+  {
+    "id": "passage.pride_and_prejudice.004",
+    "text": "She was humbled, she was grieved; she repented, though she hardly knew of what. She became jealous of his esteem, when she could no longer hope to be benefited by it. She wanted to hear of him, when there seemed the least chance of gaining intelligence. She was convinced that she could have been happy with him, when it was no longer likely they should meet.",
+    "book": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "year": 1813,
+    "location": "Chapter XLVI",
+    "themes": [
+      "love",
+      "loss"
+    ],
+    "expresses": [
+      "envy",
+      "shame"
+    ],
+    "addresses": []
+  },
+  {
+    "id": "passage.crime_and_punishment.003",
+    "text": "In wine is truth, and the truth had all come out, “that is, all the uncleanness of his coarse and envious heart”! And would such a dream ever be permissible to him, Razumihin? What was he beside such a girl--he, the drunken noisy braggart of last night? “Was it possible to imagine so absurd and cynical a juxtaposition?” Razumihin blushed desperately at the very idea and suddenly the recollection forced itself vividly upon him of how he had said last night on the stairs that the landlady would be jealous of Avdotya Romanovna.",
+    "book": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "year": 1866,
+    "location": "Part I, Chapter 2",
+    "themes": [
+      "identity",
+      "fear"
+    ],
+    "expresses": [
+      "envy",
+      "shame"
+    ],
+    "addresses": []
+  },
+  {
+    "id": "passage.jane_eyre.005",
+    "text": "I know I must conceal my sentiments: I must smother hope; I must remember that he cannot care much for me. For when I say that I am of his kind, I do not mean that I have his force to influence, and his spell to attract; I mean only that I have certain tastes and feelings in common with him.",
+    "book": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "year": 1847,
+    "location": "Chapter XXIV",
+    "themes": [
+      "love",
+      "loss"
+    ],
+    "expresses": [
+      "loneliness",
+      "sadness"
+    ],
+    "addresses": []
+  },
+  {
+    "id": "passage.pride_and_prejudice.005",
+    "text": "Elizabeth was in agonies. She looked at Jane to see how she bore it; but Jane was very composedly talking to Bingley. She looked at his two sisters, and saw them making signs of derision at each other, and at Darcy, who continued, however, impenetrably grave. She looked at her father to entreat his interference, lest Mary should be singing all night.",
+    "book": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "year": 1813,
+    "location": "Chapter XLV",
+    "themes": [
+      "belonging",
+      "love"
+    ],
+    "expresses": [
+      "anxiety",
+      "sadness"
+    ],
+    "addresses": []
+  },
+  {
+    "id": "passage.meditations.001",
+    "text": "For by these the mind doth turn and convert any impediment whatsoever, to be her aim and purpose. So that what before was the impediment, is now the principal object of her working; and that which before was in her way, is now her readiest way.",
+    "book": "Meditations",
+    "location": "Book 5",
+    "themes": [
+      "failure",
+      "courage"
+    ],
+    "expresses": [
+      "determination"
+    ],
+    "addresses": []
   }
 ]

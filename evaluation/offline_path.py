@@ -12,7 +12,21 @@ from core.models.interpreter_output import EmotionTag, InterpreterOutput
 
 # --- crisis phrases (deterministic, must not miss) ---
 CRISIS_PATTERNS = [
-    r"\b(ending it all|kill myself|suicide|self[- ]harm|don'?t see the point)\b",
+    r"\b(ending it all|ending it|kill myself|killing myself|suicide|self[- ]harm|"
+    r"hurt myself|harm myself|take my (own )?life|want to die|wish i (was|were) dead|"
+    r"better off dead|better off without me|no reason to (live|go on)|nothing to live for)\b",
+    r"\b(don'?t|do not) want to (be here|live|exist|wake up)\b",
+    r"(不想活|想死|自杀|结束生命|没有活下去的意义)",
+]
+
+# A check-in that states a feeling then contradicts it is describing a mask, not a mood.
+# Tagging the cheerful words literally is the topic-proximity failure this project exists
+# to avoid, so contrast is required before the rule fires.
+MASKING_CUES = [
+    "told everyone", "doing great", "doing fine", "pretending", "pretend to be",
+    "say i'm fine", "say i am fine", "i'm fine", "im fine", "holding it together",
+    "nobody knows", "no one knows", "nobody know", "posted about", "morning routine",
+    "look fine", "seem fine", "act like",
 ]
 
 # --- minimal keyword -> emotion rules (replace/extend with your heuristic) ---
@@ -33,13 +47,29 @@ EMOTION_KEYWORDS = {
 }
 
 SITUATION_HINTS = {
-    "peer_comparison": ["feed", "promoted", "falling behind", "朋友们"],
+    "peer_comparison": ["feed", "promoted", "falling behind", "朋友们", "everyone else",
+                        "everyone did", "better than me", "left behind", "ahead of me",
+                        "compared with", "effortless"],
     "performing_wellness": ["doing great", "pretending", "posted about", "morning routine"],
     "crisis": ["ending it all", "kill myself"],
     "grief": ["passed", "grandmother", "funeral"],
     "creative_block": ["blank page", "staring", "write"],
     "relationship_conflict": ["partner", "we barely talked"],
     "work_stress": ["deadlines", "meeting", "work"],
+}
+
+# Situation -> theme fallback (Phase 1 §5.2). Used only when no theme was inferred from
+# wording, so a recognised situation still reaches the matcher with a primary theme.
+SITUATION_THEMES = {
+    "peer_comparison": ("ambition", "identity"),
+    "performing_wellness": ("identity", "belonging"),
+    "work_stress": ("failure", "ambition"),
+    "relationship_conflict": ("love", "belonging"),
+    "grief": ("loss", "love"),
+    "creative_block": ("meaning", "failure"),
+    "health_worry": ("fear", "fear"),
+    "financial_stress": ("fear", "responsibility"),
+    "identity_question": ("identity", "meaning"),
 }
 
 THEME_HINTS = {
@@ -98,6 +128,18 @@ def offline_fallback(text: str, provided_ids: list[str] | None = None) -> Interp
     # 3. Vague input -> abstain.
     emotions = _find_emotions(text)
     situation = _find_label(text, SITUATION_HINTS)
+
+    # Masking: a stated feeling immediately contradicted. Drop the surface positives and
+    # name what the concealment itself costs.
+    lowered = text.lower()
+    if any(c in lowered for c in MASKING_CUES) and any(
+            c in lowered for c in (" but ", "though", "however", "yet ", "even though", "actually")):
+        situation = "performing_wellness"
+        emotions = [e for e in emotions if e.label not in {"joy", "pride", "relief", "hope", "gratitude"}]
+        have = {e.label for e in emotions}
+        for label, inten in (("exhaustion", 3), ("loneliness", 3), ("shame", 2)):
+            if label not in have:
+                emotions.append(EmotionTag(label=label, intensity=inten))
     if not emotions and situation is None and len(text.split()) < 15:
         out = InterpreterOutput.abstain()
         out.rejected_ids = rejected
@@ -106,6 +148,8 @@ def offline_fallback(text: str, provided_ids: list[str] | None = None) -> Interp
 
     theme = _find_label(text, THEME_HINTS)
     secondary = None
+    if theme is None and situation in SITUATION_THEMES:
+        theme, secondary = SITUATION_THEMES[situation]
     remaining = {k: v for k, v in THEME_HINTS.items() if k != theme}
     secondary = _find_label(text, remaining) if remaining else None
 

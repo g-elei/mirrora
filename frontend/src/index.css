@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(1200px 500px at 70% -10%, rgba(230, 189, 127, 0.06), transparent 60%),
+    #0d1015;
+}
+
+/* thin, quiet scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #28313f transparent;
+}
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb { background: #28313f; border-radius: 8px; }
+
+::selection {
+  background: rgba(230, 189, 127, 0.28);
+}
+
+:focus-visible {
+  outline: 2px solid rgba(230, 189, 127, 0.7);
+  outline-offset: 2px;
+}

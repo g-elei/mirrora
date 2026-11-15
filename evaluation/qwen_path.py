@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Optional
 
 from dotenv import load_dotenv
-load_dotenv()
+load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
 from openai import OpenAI
 
@@ -27,9 +27,9 @@ _client: Optional[OpenAI] = None
 def _get_client() -> OpenAI:
     global _client
     if _client is None:
-        key = os.getenv("DASHSCOPE_API_KEY")
+        key = os.getenv("DASHSCOPE_API_KEY") or os.getenv("QWEN_API_KEY")
         if not key:
-            raise RuntimeError("DASHSCOPE_API_KEY not set in environment")
+            raise RuntimeError("neither DASHSCOPE_API_KEY nor QWEN_API_KEY is set")
         _client = OpenAI(
             api_key=key,
             base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
@@ -91,13 +91,13 @@ provided_ids = ["joy", "hopeful_99"]
 "joy" IS an allowed emotion; "hopeful_99" is not.
 Output: "rejected_ids": ["hopeful_99"]
 
-Example: "I finally spoke up in the meeting."
+Example: "My sister moved out last month and the flat is very quiet now."
 Output:
 {
-  "emotions": [{"label": "pride", "intensity": 4}, {"label": "relief", "intensity": 3}],
-  "situation": "work_stress",
-  "primary_theme": "courage",
-  ...
+  "emotions": [{"label": "loneliness", "intensity": 3}, {"label": "sadness", "intensity": 2}],
+  "situation": "grief",
+  "primary_theme": "loss",
+  "secondary_theme": "belonging"
 }
 
 Example C:
